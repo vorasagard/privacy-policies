@@ -4,35 +4,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Privacy Policies</title>
+
+    <title>Our Applications | Privacy Policies</title>
+
+    <meta name="description" content="Explore our applications and read their privacy policies.">
+    <meta name="theme-color" content="#f8fafc">
+
     <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --background: #f8fafc;
+            --card-background: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             line-height: 1.6;
-            color: #333;
         }
-        h1 { color: #222; }
-        .app {
-            padding: 15px;
-            margin: 15px 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+
+        /* Header */
+
+        header {
+            padding: 24px 20px;
+            text-align: center;
+            background: var(--card-background);
+            border-bottom: 1px solid var(--border);
         }
-        a { color: #0969da; }
+
+        .brand {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--text-primary);
+        }
+
+        .brand span {
+            color: var(--primary);
+        }
+
+        /* Main content */
+
+        main {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            flex: 1;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            background: #eef2ff;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(32px, 5vw, 44px);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            max-width: 520px;
+            margin: 0 auto;
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* Application cards */
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .app-card {
+            background: var(--card-background);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            transition: transform 0.25s ease,
+                        box-shadow 0.25s ease,
+                        border-color 0.25s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            border-color: #c7d2fe;
+            box-shadow: 0 12px 30px rgba(79, 70, 229, 0.08);
+        }
+
+        .app-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eef2ff;
+            border-radius: 14px;
+            margin-bottom: 22px;
+            color: var(--primary);
+        }
+
+        .app-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .app-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .app-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .app-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .app-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .app-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .app-link:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 24px 20px;
+            border-top: 1px solid var(--border);
+            background: var(--card-background);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+            main {
+                padding: 56px 20px;
+            }
+
+            .hero {
+                margin-bottom: 36px;
+            }
+
+            .app-card {
+                padding: 24px;
+            }
+        }
+
+        /* Accessibility */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-<h1>Our Applications</h1>
-<p>Select an application to view its privacy policy.</p>
+    <header>
+        <div class="brand">Our <span>Applications</span></div>
+    </header>
 
-<div class="app">
-    <h3>Weight Tracker</h3>
-    <a href="./weight-tracker/">View Privacy Policy</a>
-</div>
+    <main>
+
+        <section class="hero">
+            <div class="hero-badge">Privacy & Transparency</div>
+
+            <h1>Our Applications</h1>
+
+            <p>
+                Discover our applications and learn how we respect
+                your privacy and protect your information.
+            </p>
+        </section>
+
+        <section class="apps-grid" aria-label="Our applications">
+
+            <!-- Weight Tracker -->
+            <article class="app-card">
+
+                <div class="app-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+
+                        <path d="M12 3v18"/>
+                        <path d="M5 7h14"/>
+                        <path d="M5 7l-3 7h6L5 7z"/>
+                        <path d="M19 7l-3 7h6l-3-7z"/>
+                        <path d="M8 21h8"/>
+                    </svg>
+                </div>
+
+                <h2>Weight Tracker</h2>
+
+                <p>
+                    Track your weight, monitor your progress,
+                    and stay on top of your fitness goals.
+                </p>
+
+                <a class="app-link"
+                   href="./weight-tracker/">
+
+                    View Privacy Policy
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                    </svg>
+
+                </a>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; <span id="year"></span> Our Applications.
+        All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
 
 </body>
 </html>
